@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<script src="https://kit.fontawesome.com/a14ae32021.js" crossorigin="anonymous"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>ProjetoManu</title>
+
+<style type="text/css">
+@font-face {
+	font-family: digit;
+	src: url('digital-7_mono.ttf') format("truetype");
+}
+</style>
+<link href="css/default.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/garden.js"></script>
+<script type="text/javascript" src="js/functions.js"></script>
+
+</head>
+
+<body>
+
+	<audio id="audioPlayer">
+		<source src="undressed.mp3" type="audio/mpeg">
+	</audio>
+	<button onclick="playAudio()">Clique aqui para criar um clima <span style="color: red;">S2</span></button>
+	
+	<div id="mainDiv">
+	<div id="content">
+		<div id="code">
+			<span class="comments">/**</span><br />
+			<span class="space"/><span class="comments">*SENTIMENTO.</span><br />
+			<span class="space"/><span class="comments">*/</span><br />
+			Oi, moça...<br />
+			Te escrevo porque meu coração pediu.<br />
+			<span class="comments">// Você tem sido meu pensamento nos últimos meses</span><br />
+			E o silêncio já não me basta mais;<br />
+			<span class="comments">// Quando eu menos esperava, o motivo do meu sorriso, se tornou o seu.</span><br />
+			Sei que as coisas não estão fáceis;<br />
+			E nem tudo tem saído da melhor forma;<br />
+			Mas estou aqui para te lembrar;<br />
+			Que você é especial, e que nunca esqueci dos nossos momentos juntos;<br />
+			E há outras pessoas que se importam com você;<br />
+			Houveram brigas;<br />
+			<span class="comments">// E eu tenho certeza que haverão mais.</span><br />
+			Mas o futuro valerá cada batalha;<br />
+			<br>
+			<br>
+			Quero dizer que:<br />
+			Você é importante para mim;<br />
+			<br>
+			<br>
+			Agora, se quiser um pedaço de esperança, clique no coração<br />
+			<br>
+			<span id="heartspan">
+			<a href="fotinho.png"><i class="fas fa-heart" id="icon"></i></a>
+			</span>
+			
+		</div>
+		<div id="loveHeart">
+			<canvas id="garden"></canvas>
+			<div id="">
+				<div id="">
+<span style="color: #FFFFEE;">Achouu! Eu sinto saudades de você</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+    // Função para tocar o áudio
+    function playAudio() {
+      var audio = document.getElementById("audioPlayer");
+      audio.play().catch(function(error) {
+        console.log("Erro ao tentar tocar o áudio:", error);
+      });
+    }
+  </script>
+
+<script type="text/javascript">
+var offsetX = $("#loveHeart").width() / 2;
+var offsetY = $("#loveHeart").height() / 2 - 55;
+var together = new Date();
+together.setFullYear(2016, 8, 5);
+together.setHours(16);
+together.setMinutes(30);
+together.setSeconds(0);
+together.setMilliseconds(0);
+
+if (!document.createElement('canvas').getContext) {
+	var msg = document.createElement("div");
+	msg.id = "errorMsg";
+	msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+	document.body.appendChild(msg);
+	$("#code").css("display", "none")
+	$("#copyright").css("position", "absolute");
+	$("#copyright").css("bottom", "10px");
+	document.execCommand("stop");
+} else {
+	setTimeout(function () {
+		startHeartAnimation();
+	}, 5000);
+
+	timeElapse(together);
+	setInterval(function () {
+		timeElapse(together);
+	}, 500);
+
+	adjustCodePosition();
+	$("#code").typewriter();
+}
+</script>
+</body>
+</html>
